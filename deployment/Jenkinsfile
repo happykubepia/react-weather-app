@@ -16,9 +16,9 @@ podTemplate(
 		containerTemplate(name: 'podman', image: 'mgoltzsche/podman', ttyEnabled: true, command: 'cat', privileged: true)
 	],
 	//volume mount
-    volumes: [
-    	nfsVolume( mountPath: '~/.npm', serverAddress: '10.193.24.247', serverPath: '/users/data/ibm', readOnly: false ),
-    ]	
+    //volumes: [
+    //	nfsVolume( mountPath: '~/.npm', serverAddress: '10.193.24.247', serverPath: '/users/data/ibm', readOnly: false ),
+    //]	
 ) 
 
 {

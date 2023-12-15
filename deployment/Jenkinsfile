@@ -17,7 +17,7 @@ podTemplate(
 	],
 	//volume mount
     volumes: [
-    	nfsVolume( mountPath: '/app/node_modules', serverAddress: '10.193.24.247', serverPath: '/users/data/ibm', readOnly: false ),
+    	nfsVolume( mountPath: '~/.npm', serverAddress: '10.193.24.247', serverPath: '/users/data/ibm', readOnly: false ),
     ]	
 ) 
 

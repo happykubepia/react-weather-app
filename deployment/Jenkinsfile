@@ -20,7 +20,8 @@ podTemplate(
 {
 	node(label) {
 		stage("Get Source") {
-			git branch: 'main', url: 'https://github.com/happykubepia/react-weather-app.git'
+			//git branch: 'main', url: 'https://github.com/happykubepia/react-weather-app.git'
+			git branch: "main", url:"https://github.com/happykubepia/react-weather-app.git", credentialsId: "github_token_hiondal"			
         } 
 
 		//-- Read pipeline.properties and setting variables

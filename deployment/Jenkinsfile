@@ -17,7 +17,7 @@ podTemplate(
 	],
 	//volume mount
     volumes: [
-    	nfsVolume( mountPath: '/home/jenkins/agent/workspace/react-weather-app/node_modules', serverAddress: '10.193.24.247', serverPath: '/users/ibm/react-weather-app/node_modules', readOnly: false ),
+    	//nfsVolume( mountPath: '/home/jenkins/agent/workspace/react-weather-app/node_modules', serverAddress: '10.193.24.247', serverPath: '/users/ibm/react-weather-app/node_modules', readOnly: false ),
     ]
 ) 
 

@@ -2,6 +2,7 @@ FROM node:alpine as builder
 
 WORKDIR /app
 COPY . ./
+RUN npm config set proxy http://npm-proxy-cache-service && npm config set https-proxy http://npm-proxy-cache-service && npm config set strict-ssl false 
 RUN yarn install && npm install && yarn build 
 
 ## 빌드 결과를 nginx에 배포한다.

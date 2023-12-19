@@ -18,7 +18,7 @@ podTemplate(
 	],
 	//volume mount
 	volumes: [
-    	nfsVolume( mountPath: '${WORKSPACE}/react-weather-app/node_modules', serverAddress: '10.193.24.247', serverPath: '/users/data/jenkins/node_modules', readOnly: false ),
+    	nfsVolume( mountPath: '${WORKSPACE}/node_modules', serverAddress: '10.193.24.247', serverPath: '/users/data/jenkins/node_modules', readOnly: false ),
     ]
 ) 
 
@@ -45,7 +45,7 @@ podTemplate(
 		try {
 			stage('NPM Build') {
 				container("node") {
-					sh "cd ${WORKSPACE}/${repository}"					
+					sh "cd ${WORKSPACE}"					
 					sh "yarn install"
 					sh "npm install"
 					sh "yarn build"

@@ -45,8 +45,5 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  },
-  "publishConfig": {
-    "registry": "http://nexus.165.192.105.60.nip.io/repository/npm-hosted"
   }
 }

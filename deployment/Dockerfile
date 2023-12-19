@@ -2,9 +2,10 @@ FROM node:alpine as builder
 
 WORKDIR /app
 COPY . ./
-COPY ./.npmrc ~/.npmrc
-RUN yarn install && npm install && yarn build
-
+#COPY ./.npmrc ~/.npmrc
+#RUN yarn install && npm install && yarn build
+RUN yarn build
+ 
 ## 빌드 결과를 nginx에 배포한다.
 FROM nginx:latest
 

@@ -11,7 +11,7 @@ notifySlack("STARTED", "#FFFF00")
 podTemplate(
 	label: label, 
 	containers: [
-		containerTemplate(name: "node", image: "node:alpine", ttyEnabled: true, command: "cat"),
+		//containerTemplate(name: "node", image: "node:alpine", ttyEnabled: true, command: "cat"),
 		containerTemplate(name: "trivy", image: "aquasec/trivy", ttyEnabled: true, command: "cat"),
 		containerTemplate(name: "kubectl", image: "lachlanevenson/k8s-kubectl", command: "cat", ttyEnabled: true),
 		containerTemplate(name: 'podman', image: 'mgoltzsche/podman', ttyEnabled: true, command: 'cat', privileged: true)
@@ -43,15 +43,6 @@ podTemplate(
 		selector_val=props["selector_val"]
 
 		try {
-			stage('NPM Build') {
-				container("node") {
-					sh "cd ${WORKSPACE}"					
-					sh "yarn install"
-					sh "npm install"
-					sh "npm run build"
-				}
-			}		
-
 			stage("Build Container image") {
 				container("podman") {
 					withCredentials([usernamePassword(

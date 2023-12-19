@@ -3,7 +3,7 @@ FROM node:alpine as builder
 WORKDIR /app
 COPY . ./
 
-RUN yarn install --cache-folder ./yarn-cache && npm install && yarn build
+RUN yarn install && npm install && yarn build
 
 ## 빌드 결과를 nginx에 배포한다.
 FROM nginx:latest

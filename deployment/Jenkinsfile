@@ -48,7 +48,7 @@ podTemplate(
 					sh "cd ${WORKSPACE}"					
 					sh "yarn install"
 					sh "npm install"
-					sh "yarn build"
+					sh "npm run build"
 				}
 			}		
 

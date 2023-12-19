@@ -2,7 +2,7 @@ FROM node:alpine as builder
 
 WORKDIR /app
 COPY . ./
-ENV NPM_REPO nexus.165.192.105.60.nip.io/repository/npm-hosted
+COPY ./.npmrc ~/.npmrc
 RUN yarn install && npm install && yarn build
 
 ## 빌드 결과를 nginx에 배포한다.

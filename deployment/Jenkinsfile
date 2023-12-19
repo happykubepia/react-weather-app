@@ -48,6 +48,7 @@ podTemplate(
 			stage("Build React") {
 				container("node") {
 					//sh "cd ${WORKSPACE}"
+					sh "CI=npm run build"
 					sh "yarn build"
 				}
 			}

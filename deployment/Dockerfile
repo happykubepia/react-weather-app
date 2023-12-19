@@ -3,8 +3,8 @@ FROM node:alpine as builder
 WORKDIR /app
 COPY . ./
 #ENV NPM_PROXY npm-proxy-cache-service.ibm.svc.cluster.local
-ENV NPM_PROXY npm-proxy.165.192.105.60.nip.io
-RUN npm config set proxy http://${NPM_PROXY} && npm config set https-proxy http://${NPM_PROXY} && npm config set strict-ssl false 
+#ENV NPM_PROXY npm-proxy.165.192.105.60.nip.io
+#RUN npm config set proxy http://${NPM_PROXY} && npm config set https-proxy http://${NPM_PROXY} && npm config set strict-ssl false 
 RUN yarn install && npm install && yarn build 
 
 ## 빌드 결과를 nginx에 배포한다.

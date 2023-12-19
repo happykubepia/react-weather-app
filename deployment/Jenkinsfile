@@ -19,7 +19,7 @@ podTemplate(
 	//volume mount
 	
 	volumes: [
-    	nfsVolume( mountPath: '${HOME}', serverAddress: '10.193.24.247', serverPath: '/users/data/jenkins', readOnly: false ),
+    	nfsVolume( mountPath: '/home/jenkins/agent/workspace', serverAddress: '10.193.24.247', serverPath: '/users/data/jenkins', readOnly: false ),
     ]
 	
 ) 

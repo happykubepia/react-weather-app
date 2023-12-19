@@ -72,12 +72,10 @@ podTemplate(
 					md5sum package.json > ${MD5_FILE_NAME}
 					cp ${MD5_FILE_NAME} ${CACHE_FOLDER}
 					'''
-					//sh '''
-					//npm run ngcc
-					//'''
-					sh '''
-					npm run build
-					'''
+					
+					sh "yarn install"
+					sh "npm install"
+					sh "yarn build"
 				}
 			}		
 

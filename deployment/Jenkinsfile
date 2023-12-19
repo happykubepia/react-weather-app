@@ -17,7 +17,7 @@ podTemplate(
 	],
 	//volume mount
 	volumes: [
-    	nfsVolume( mountPath: '/root', serverAddress: '10.193.24.247', serverPath: '/users/data/jenkins', readOnly: false ),
+    	nfsVolume( mountPath: '/app/react-weather-app/node_modules', serverAddress: '10.193.24.247', serverPath: '/users/data/jenkins', readOnly: false ),
     ]
 ) 
 

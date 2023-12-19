@@ -61,10 +61,10 @@ podTemplate(
 						cp ${CACHE_FOLDER}/${MD5_FILE_NAME} ${MD5_FILE_NAME}
 						md5sum package.json
 						cat ${MD5_FILE_NAME}
-						md5sum -c ${MD5_FILE_NAME} || npm ci
+						//md5sum -c ${MD5_FILE_NAME} || npm ci
 					else
 						echo "No md5sum backup"
-						npm ci
+						//npm ci
 					fi
 
 					echo "create new md5sum backup"

@@ -20,7 +20,7 @@ podTemplate(
 	
 	volumes: [
     	nfsVolume( mountPath: '/root/.npm', serverAddress: '10.193.24.247', serverPath: '/users/data/jenkins/.npm', readOnly: false ),
-		nfsVolume( mountPath: '/home/jenkins/.yarn', serverAddress: '10.193.24.247', serverPath: '/users/data/jenkins/.yarn', readOnly: false )
+		nfsVolume( mountPath: '/root/.yarn', serverAddress: '10.193.24.247', serverPath: '/users/data/jenkins/.yarn', readOnly: false )
     ]
 	
 ) 
@@ -49,7 +49,7 @@ podTemplate(
 		try {
 			stage("Build React Scripts") {
 				container("node") {
-					sh "yarn install --cache-folder /home/jenkins/.yarn --modules_folder ."
+					sh "yarn install --cache-folder /root/.yarn --modules_folder ."
 					sh "npm install --prefix ."
 					sh "npm run build --prefix ."
 				}

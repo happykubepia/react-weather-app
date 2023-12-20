@@ -18,7 +18,7 @@ podTemplate(
 	],
 	//volume mount
 	volumes: [
-    	nfsVolume( mountPath: '/home/jenkins/agent/workspace', serverAddress: '10.193.24.247', serverPath: '/users/data/jenkins', readOnly: false ),
+    	nfsVolume( mountPath: '/home/jenkins/agent/workspace/.cache', serverAddress: '10.193.24.247', serverPath: '/users/data/jenkins/.cache', readOnly: false ),
     ]
 	
 ) 
@@ -28,7 +28,7 @@ podTemplate(
 		stage("Get Source") {
 			//git branch: 'main', url: 'https://github.com/happykubepia/react-weather-app.git'
 			git branch: "main", url:"https://github.com/happykubepia/react-weather-app.git", credentialsId: "github_token_hiondal"			
-			sh "chmod -R 777 ${WORKSPACE}"
+			
 		} 
 
 		//-- Read pipeline.properties and setting variables
@@ -47,7 +47,7 @@ podTemplate(
 		try {
 			stage("Build React Scripts") {
 				container("node") {
-					sh "yarn install --cache-folder ${WORKSPACE}/yarn-cache"
+					sh "yarn install --cache-folder /home/jenkins/agent/workspace/.cache"
 					sh "npm install"
 					sh "yarn build"
 				}

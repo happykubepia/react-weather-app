@@ -48,8 +48,8 @@ podTemplate(
 		try {
 			stage("Build React Scripts") {
 				container("node") {
-					sh "npm config ls -l"
-					
+					//sh "npm config ls -l"
+
 					sh "yarn install --cache-folder /home/jenkins/agent/workspace/.cache --modules_folder ."
 					sh "npm install --prefix ."
 					sh "npm run build --prefix ."

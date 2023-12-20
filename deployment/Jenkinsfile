@@ -20,7 +20,7 @@ podTemplate(
 	
 	volumes: [
     	nfsVolume( mountPath: '/root/.npm', serverAddress: '10.193.24.247', serverPath: '/users/data/jenkins/.npm', readOnly: false ),
-		nfsVolume( mountPath: '/root/.yarn', serverAddress: '10.193.24.247', serverPath: '/users/data/jenkins/.yarn', readOnly: false )
+		nfsVolume( mountPath: '/home/jenkins/.yarn', serverAddress: '10.193.24.247', serverPath: '/users/data/jenkins/.yarn', readOnly: false )
     ]
 	
 ) 
